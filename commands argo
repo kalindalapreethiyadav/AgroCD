@@ -143,3 +143,44 @@ argocd-repo-server                        ClusterIP   10.100.215.80    <none>   
 argocd-server                             ClusterIP   10.104.223.98    <none>        80/TCP,443/TCP               25m
 argocd-server-metrics                     ClusterIP   10.110.168.8     <none>        8083/TCP                     25m
 
+#deploy application using Declartive:-
+
+
+controlplane $ git clone https://github.com/kalindalapreethiyadav/AgroCD.git
+Cloning into 'AgroCD'...
+remote: Enumerating objects: 28, done.
+remote: Counting objects: 100% (28/28), done.
+remote: Compressing objects: 100% (20/20), done.
+remote: Total 28 (delta 9), reused 20 (delta 4), pack-reused 0
+Unpacking objects: 100% (28/28), 5.28 KiB | 675.00 KiB/s, done.
+controlplane $ ls
+AgroCD  filesystem
+controlplane $ cd AgroCD/
+controlplane $ ls
+ AgroCD   README.md   apps  'commands argo'   example-argocd  'killercode cmds'
+controlplane $ cd apps/
+controlplane $ ls
+application.yaml
+controlplane $ kubectl apply -f application.yaml
+application.argoproj.io/guestbook created
+controlplane $ kubectl get application -n argocd'
+> ^C
+controlplane $ kubectl get application -n argocd 
+NAME        SYNC STATUS   HEALTH STATUS
+guestbook   OutOfSync     Missing
+controlplane $ 
+
+
+Manifest:--
+
+project: default
+source:
+  repoURL: 'https://github.com/kalindalapreethiyadav/AgroCD.git'
+  path: example-argocd
+  targetRevision: main
+destination:
+  server: 'https://kubernetes.default.svc'
+  namespace: guestbook
+syncPolicy:
+  syncOptions:
+    - CreateNamespace=true
