@@ -18,3 +18,8 @@ argocd-server-94b6c75cc-drxtn                       1/1     Running   0         
 controlplane $ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
 7WN61byP13xB-908WQM
 controlplane $ 
+
+CLI Installation :-
+--------------------
+controlplane $ curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/download/v2.4.8/argocd-linux-amd64
+controlplane $ chmod +x /usr/local/bin/argocd
