@@ -19,3 +19,60 @@ AWS Secret Access Key [None]:
 Default region name [None]: us-east-1
 Default output format [None]: json
 
+
+usage: aws [options] <command> <subcommand> [<subcommand> ...] [parameters]
+To see help text, you can run:
+
+  aws help
+  aws <command> help
+  aws <command> <subcommand> help
+
+aws: error: the following arguments are required: command
+
+
+C:\Users\kalin>pip install boto3
+Collecting boto3
+  Downloading boto3-1.26.71-py3-none-any.whl (132 kB)
+     ---------------------------------------- 132.7/132.7 kB 80.0 kB/s eta 0:00:00
+Collecting botocore<1.30.0,>=1.29.71
+  Downloading botocore-1.29.71-py3-none-any.whl (10.4 MB)
+     ---------------------------------------- 10.4/10.4 MB 146.7 kB/s eta 0:00:00
+Collecting jmespath<2.0.0,>=0.7.1
+  Downloading jmespath-1.0.1-py3-none-any.whl (20 kB)
+Collecting s3transfer<0.7.0,>=0.6.0
+  Downloading s3transfer-0.6.0-py3-none-any.whl (79 kB)
+     ---------------------------------------- 79.6/79.6 kB 233.4 kB/s eta 0:00:00
+Collecting python-dateutil<3.0.0,>=2.1
+  Downloading python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)
+     ---------------------------------------- 247.7/247.7 kB 249.2 kB/s eta 0:00:00
+Collecting urllib3<1.27,>=1.25.4
+  Downloading urllib3-1.26.14-py2.py3-none-any.whl (140 kB)
+     ---------------------------------------- 140.6/140.6 kB 252.7 kB/s eta 0:00:00
+Collecting six>=1.5
+  Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
+Installing collected packages: urllib3, six, jmespath, python-dateutil, botocore, s3transfer, boto3
+Successfully installed boto3-1.26.71 botocore-1.29.71 jmespath-1.0.1 python-dateutil-2.8.2 s3transfer-0.6.0 six-1.16.0 urllib3-1.26.14
+
+[notice] A new release of pip available: 22.3.1 -> 23.0
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+C:\Users\kalin>aws configure
+AWS Access Key ID [****************XIYK]:
+AWS Secret Access Key [****************Qjsz]:
+Default region name [us-east-1]:
+Default output format [json]:
+
+C:\Users\kalin>pip show
+WARNING: ERROR: Please provide a package name or names.
+
+C:\Users\kalin>pip show boto3
+Name: boto3
+Version: 1.26.71
+Summary: The AWS SDK for Python
+Home-page: https://github.com/boto/boto3
+Author: Amazon Web Services
+Author-email:
+License: Apache License 2.0
+Location: C:\Users\kalin\AppData\Local\Programs\Python\Python311\Lib\site-packages
+Requires: botocore, jmespath, s3transfer
+Required-by:
