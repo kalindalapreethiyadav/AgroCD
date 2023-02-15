@@ -2,7 +2,8 @@ import boto3
 import os
 
 BUCKET_NAME = 'mybucketpreek'
-Path = 'sub_app/sapp/'
+path = 'sub_app/sapp/'
+
 #Object_File_Name = 'sub_app/helm-charts-main.gz.zip'
 #Local_file_Name = 'download.zip'
 
@@ -12,7 +13,7 @@ def download_all_objects_in_folder():
     my_bucket = s3_resource.Bucket(BUCKET_NAME)
     objects = my_bucket.objects.filter(Prefix='sub_app/sapp/')
     for obj in objects:
-        Path, filename = os.path.split(obj.key)
+        filename = os.path.split(obj.key)
         my_bucket.download_file(obj.key, filename)
 
 #main function start

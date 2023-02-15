@@ -1,10 +1,6 @@
 import boto3
 import os
 
-BUCKET_NAME = 'mybucketpreek'
-Object_File_Name = 'sub_app/helm-charts-main.gz.zip'
-Local_file_Name = 'download.zip'
-
 def s3_client():
     s3 = boto3.client('s3')
     """ :type : pyboto3.s3 """
@@ -12,7 +8,7 @@ def s3_client():
 
 def downlaod_file():
     #file_path = os.path.dirname(__file__) + 'sub_app/helm-charts-main.gz.zip'
-    return s3_client().download_file(BUCKET_NAME, Object_File_Name, Local_file_Name)
+    return s3_client().download_file('mybucketpreek', 'sub_app/sapp/helm-v3.11.1-linux-ppc64le.tar.gz.asc','helm-v3.11.1-linux-ppc64le.tar.gz.asc')
 
 #main function start
 if __name__ == '__main__':
