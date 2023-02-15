@@ -15,10 +15,8 @@ def s3_resource():
 def create_bucket(bucket_name):
     return s3_client().create_bucket(
         Bucket=bucket_name,
-        CreateBucketConfiguration={
-            'LocationConstraint': 'us-east-1'
-        }
     )
+
 
 
 if __name__ == '__main__':
