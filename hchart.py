@@ -1,15 +1,16 @@
 import boto3
-import json
-import os
-import threading
-import sys
-
-from boto3.s3.transfer import TransferConfig
-
-BUCKET_NAME = 'niyazi-s3-2018-bucket'
 
 
+BUCKET_NAME = "mybucketpreek"
 
-def list_buckets():
-    return s3_client().list_buckets()
+s3_resource = boto3.resource('s3')
 
+s3_object = s3_resource.Object(BUCKET_NAME, 'helm-charts-main.zip')
+s3_object.download_file('downloaded.pdf')
+print("File has been downloaded")
+
+#listing the bucket files
+s3_bucket = s3_resource.Bucket(BUCKET_NAME)
+print("Listing Bucket Files or Objects")
+for obj in s3_bucket.objects.all():
+    print(obj.key)
