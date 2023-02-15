@@ -1,5 +1,5 @@
+#!/usr/bin/python
 import boto3
-
 
 BUCKET_NAME = "mybucketpreek"
 
