@@ -1,7 +1,12 @@
 from pathlib import Path
-p2 = Path('AgroCD')
+path = Path('AgroCD')
 
 #To list files in folder
-flist = p2.iterdir()
+flist = path.iterdir()
 print(list(flist))
 
+#To list all files in folder path
+for obj in list(path.iterdir()):
+    print(obj)
+
+#
