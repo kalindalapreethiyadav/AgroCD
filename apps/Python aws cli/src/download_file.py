@@ -1,6 +1,5 @@
 import boto3
 import boto3.session
-import zipfile
 
 BUCKET_NAME = 'mybucketpreek'
 
