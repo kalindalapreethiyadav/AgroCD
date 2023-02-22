@@ -1,3 +1,7 @@
 from pathlib import Path
-p2 = Path('https://ibm-learning.udemy.com/course/automate-everything-with-python/')
-print(p2.iterdir()))
+p2 = Path('AgroCD')
+
+#To list files in folder
+flist = p2.iterdir()
+print(list(flist))
+
